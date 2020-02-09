@@ -1,0 +1,29 @@
+<button>This is header Component of the Page</button>
+<button class="btn btn-primary" (click)="OnClick()">Click Me!!</button>
+<!-- {{ weather.weatherData | json }} -->
+<!-- <div *ngIf="weather.weatherData !== null">
+  {{ JSON.stringify(weather.weatherData) }}
+</div> -->
+<!-- this is a shortCut for JSON.stringify
+
+  variableName | json
+service is used to hsare the data
+pipe is used for manipulation with the data in HTML
+-->
+<!-- <div *ngFor=" let arr of weather.weatherData"> -->
+  <!-- we are accessing the variable from service directly -->
+  <!-- <span>
+    {{ arr.id }} {{ arr.title }}
+  </span>
+</div> -->
+<app-child-weather [dataFromParent] = "weather.weatherData">
+<!--Here we are calling the child component from parent component -->
+</app-child-weather>
+<span><b>This is Dynamic Body of the Page whose data will change dynamically by the server side</b></span>
+<input type="text" [(ngModel)]="id" (ngModelChange) = "GetDataById()"/>
+<div>
+  <!-- {{ weather.weatherDataObj.title }} -->
+  <!-- this is a dynamic data Binding -->
+  Parent Component(this can be a footer component)
+</div>
+<router-outlet></router-outlet>
